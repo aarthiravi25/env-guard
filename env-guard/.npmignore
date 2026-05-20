@@ -1,0 +1,35 @@
+# Exclude local testing and configurations
+examples/
+tests/
+__tests__/
+
+# Exclude workspace artifacts and brain logs
+.gemini/
+brain/
+scratch/
+.system_generated/
+task.md
+implementation_plan.md
+walkthrough.md
+
+# Exclude development files
+.eslintrc*
+jest.config*
+.github/
+.husky/
+
+# Exclude environment files
+.env
+.env.*
+!.env.example
+
+# Exclude development logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Exclude OS system files
+.DS_Store
+Thumbs.db

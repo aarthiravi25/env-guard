@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run env-guard safety audits before committing code
+npx env-guard check && npx env-guard scan --staged
