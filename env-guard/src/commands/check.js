@@ -1,4 +1,5 @@
 import path from 'path';
+import chalk from 'chalk';
 import * as p from '@clack/prompts';
 import { ENV_FILES } from '../utils/constants.js';
 import { exists } from '../utils/file.js';
@@ -47,7 +48,7 @@ export async function checkCommand(projectDir = process.cwd()) {
     
     // In interactive environments, offer to run fix immediately
     if (isInteractive) {
-      p.intro(p.bgCyan(' env-guard '));
+      p.intro(chalk.bgCyan(' env-guard '));
       const shouldFix = await p.confirm({
         message: 'No .gitignore file found. Would you like to create one and ignore env files automatically?',
         initialValue: true
@@ -64,7 +65,7 @@ export async function checkCommand(projectDir = process.cwd()) {
       // Run fix automatically
       const fixed = await fixCommand(projectDir);
       if (fixed) {
-        p.outro(p.green('✔ .gitignore created and environment files successfully ignored!'));
+        p.outro(chalk.green('✔ .gitignore created and environment files successfully ignored!'));
         return true;
       }
       return false;
@@ -99,7 +100,7 @@ export async function checkCommand(projectDir = process.cwd()) {
 
     // If interactive, offer to auto-fix immediately
     if (isInteractive) {
-      p.intro(p.bgCyan(' env-guard '));
+      p.intro(chalk.bgCyan(' env-guard '));
       const shouldFix = await p.confirm({
         message: `Would you like to automatically ignore these ${status.unignored.length} files in .gitignore?`,
         initialValue: true
@@ -113,7 +114,7 @@ export async function checkCommand(projectDir = process.cwd()) {
       // Run fix automatically
       const fixed = await fixCommand(projectDir);
       if (fixed) {
-        p.outro(p.green('✔ .gitignore updated and environment files successfully ignored!'));
+        p.outro(chalk.green('✔ .gitignore updated and environment files successfully ignored!'));
         return true;
       }
       return false;

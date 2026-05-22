@@ -1,7 +1,10 @@
-# Exclude local testing and configurations
-examples/
+# Exclude demo and testing
+demo/
 tests/
 __tests__/
+
+# Exclude assets
+assets/
 
 # Exclude workspace artifacts and brain logs
 .gemini/
@@ -16,6 +19,7 @@ walkthrough.md
 .eslintrc*
 jest.config*
 .github/
+.vscode/
 .husky/
 
 # Exclude environment files
@@ -28,6 +32,9 @@ jest.config*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Exclude coverage
+coverage/
 pnpm-debug.log*
 
 # Exclude OS system files

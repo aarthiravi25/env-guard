@@ -22,6 +22,12 @@ npx env-guard scan --staged
 
 ---
 
+## 🎬 Demo
+
+![demo](./assets/demo.gif)
+
+---
+
 ## 💡 Why env-guard?
 
 Accidental secret leakage represents a massive, expensive security vulnerability. Public GitHub repositories are continuously crawled by bots within seconds of a commit.
