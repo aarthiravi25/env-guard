@@ -1,5 +1,5 @@
 {
-  "name": "env-guard",
+  "name": "@ft_aarthiravi/env-guard",
   "version": "1.0.0",
   "description": "Prevent accidental exposure of .env files and secrets to Git repositories.",
   "type": "module",

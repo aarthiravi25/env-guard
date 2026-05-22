@@ -1,10 +1,18 @@
 # env-guard 🛡️
 
-[![npm version](https://img.shields.io/npm/v/env-guard.svg?style=flat-square)](https://www.npmjs.com/package/env-guard)
+[![npm version](https://img.shields.io/npm/v/@ft_aarthiravi/env-guard.svg?style=flat-square)](https://www.npmjs.com/package/@ft_aarthiravi/env-guard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 `env-guard` is a lightweight, zero-dependency, cross-platform CLI tool and programmatic library designed to prevent developers from accidentally exposing sensitive environment files (`.env`) and hardcoded credentials to Git repositories.
+
+## 📦 npm Package
+
+**[@ft_aarthiravi/env-guard](https://www.npmjs.com/package/@ft_aarthiravi/env-guard)** — Production-ready secret protection for developers.
+
+```bash
+npm install @ft_aarthiravi/env-guard --save-dev
+```
 
 ---
 
@@ -14,10 +22,10 @@ Get started instantly without installing globally:
 
 ```bash
 # Audit your repository for exposed environment files
-npx env-guard check
+npx @ft_aarthiravi/env-guard check
 
 # Scan staged changes for hardcoded secret patterns
-npx env-guard scan --staged
+npx @ft_aarthiravi/env-guard scan --staged
 ```
 
 ---
@@ -54,13 +62,13 @@ Accidental secret leakage represents a massive, expensive security vulnerability
 To install as a local development dependency:
 
 ```bash
-npm install env-guard --save-dev
+npm install @ft_aarthiravi/env-guard --save-dev
 ```
 
 To install globally:
 
 ```bash
-npm install -g env-guard
+npm install -g @ft_aarthiravi/env-guard
 ```
 
 ---
@@ -91,7 +99,7 @@ Configures optimal environment safety defaults:
 #### Automated Git Hooks:
 Initialize Husky configurations with a single command:
 ```bash
-npx env-guard init --husky
+npx @ft_aarthiravi/env-guard init --husky
 ```
 This safely creates or appends rules to `.husky/pre-commit` to execute `env-guard check && env-guard scan --staged` before every commit.
 
@@ -120,7 +128,7 @@ Scans project files for hardcoded secrets.
 You can also integrate `env-guard` directly into custom Node.js build scripts:
 
 ```javascript
-import { checkCommand, gitignoreService } from 'env-guard';
+import { checkCommand, gitignoreService } from '@ft_aarthiravi/env-guard';
 
 // Verify ignorance
 const clean = await checkCommand(process.cwd());
