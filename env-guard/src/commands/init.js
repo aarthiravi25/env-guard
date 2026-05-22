@@ -103,8 +103,13 @@ export async function initCommand(projectDir = process.cwd(), options = {}) {
         ].join('\n');
       }
 
-      // Write hook and grant execution permissions (0o755)
-      await fs.writeFile(preCommitPath, hookContent, { encoding: 'utf-8', mode: 0o755 });
+      // Write hook and grant execution permissions (0o755 on Unix-like systems)
+      // Windows doesn't support file mode, so only set permissions on non-Windows platforms
+      if (process.platform !== 'win32') {
+        await fs.writeFile(preCommitPath, hookContent, { encoding: 'utf-8', mode: 0o755 });
+      } else {
+        await fs.writeFile(preCommitPath, hookContent, { encoding: 'utf-8' });
+      }
       logger.success('Husky pre-commit hook configured successfully!');
       logger.success(`Added audits: "${commandToAdd}"`);
 
