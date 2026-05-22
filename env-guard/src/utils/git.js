@@ -6,19 +6,6 @@ import { exists, normalizePath } from './file.js';
 const execAsync = promisify(exec);
 
 /**
- * Check if Git CLI is installed and available in the system path
- * @returns {Promise<boolean>}
- */
-export async function isGitInstalled() {
-  try {
-    await execAsync('git --version');
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-/**
  * Check if the given directory is inside a Git repository
  * @param {string} dir - The directory path to check
  * @returns {Promise<boolean>}

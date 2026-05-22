@@ -6,16 +6,6 @@ import { exists, readFileContent, writeFileContent, normalizePath } from '../uti
  */
 export const gitignoreService = {
   /**
-   * Check if a .gitignore file exists in the directory
-   * @param {string} projectDir 
-   * @returns {Promise<boolean>}
-   */
-  async gitignoreExists(projectDir) {
-    const gitignorePath = path.join(projectDir, '.gitignore');
-    return await exists(gitignorePath);
-  },
-
-  /**
    * Compile a gitignore rule line to a regular expression
    * @param {string} pattern - One line rule from .gitignore
    * @returns {{regex: RegExp, isNegated: boolean} | null}
@@ -71,7 +61,7 @@ export const gitignoreService = {
         regexStr += '\\/';
       } else {
         // Escape special characters in regex
-        regexStr += char.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        regexStr += char.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
       }
     }
 

@@ -26,20 +26,6 @@ export async function exists(filePath) {
 }
 
 /**
- * Check if path is a directory
- * @param {string} filePath - Path to check
- * @returns {Promise<boolean>}
- */
-export async function isDirectory(filePath) {
-  try {
-    const stats = await fs.stat(filePath);
-    return stats.isDirectory();
-  } catch {
-    return false;
-  }
-}
-
-/**
  * Recursively find all files in a directory, ignoring specified folders.
  * Uses symlink safety and path normalization.
  * @param {string} dir - Directory to search in

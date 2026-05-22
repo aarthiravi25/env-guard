@@ -1,4 +1,3 @@
-import path from 'path';
 import { scannerService } from '../services/scannerService.js';
 import { logger } from '../utils/logger.js';
 import { isGitRepository, getStagedFiles } from '../utils/git.js';

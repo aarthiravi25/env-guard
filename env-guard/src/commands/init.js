@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
-import { ENV_FILES } from '../utils/constants.js';
-import { exists, writeFileContent, readFileContent, normalizePath } from '../utils/file.js';
+import { exists, writeFileContent, readFileContent } from '../utils/file.js';
 import { logger } from '../utils/logger.js';
 import { gitignoreService } from '../services/gitignoreService.js';
 import { isGitRepository } from '../utils/git.js';
