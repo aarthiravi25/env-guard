@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
-`env-guard` is a lightweight, zero-dependency, cross-platform CLI tool and programmatic library designed to prevent developers from accidentally exposing sensitive environment files (`.env`) and hardcoded credentials to Git repositories.
+`env-guard` is a lightweight,cross-platform CLI tool and programmatic library designed to prevent developers from accidentally exposing sensitive environment files (`.env`) and hardcoded credentials to Git repositories.
 
 ## 📦 npm Package
 
